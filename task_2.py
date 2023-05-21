@@ -356,7 +356,7 @@ class LinkedBST(AbstractCollection):
             tree_2.add(list_buf_shaffle[index])
             tree_1.add(list_buf[index])
         # Getting random data to find
-        find_test_list = LinkedBST.get_random_elements(list_buf_shaffle, 1000)
+        find_test_list = LinkedBST.get_random_elements(list_buf_shaffle, 10000)
         # Measuring time for tree based on data in alphabetic order
         iterations = 0
         start = time.time()
