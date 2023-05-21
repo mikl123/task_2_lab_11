@@ -407,7 +407,7 @@ class LinkedBST(AbstractCollection):
         results_1.append(end - start)
         results.append(iterations)
         # Printing results
-        print(
+        print("10000 слів"+
             "Вбудований метод списку: "
             + str(results_1[3])
             + " секунд\n"
