@@ -356,7 +356,7 @@ class LinkedBST(AbstractCollection):
             tree_2.add(list_buf_shaffle[index])
             tree_1.add(list_buf[index])
         # Getting random data to find
-        find_test_list = LinkedBST.get_random_elements(list_buf_shaffle, 100)
+        find_test_list = LinkedBST.get_random_elements(list_buf_shaffle, 1000)
         # Measuring time for tree based on data in alphabetic order
         iterations = 0
         start = time.time()
@@ -365,6 +365,8 @@ class LinkedBST(AbstractCollection):
             if i == finded[0]:
                 iterations += finded[1]
                 continue
+            else:
+                return
         end = time.time()
         results_1.append(end - start)
         results.append(iterations)
@@ -376,6 +378,8 @@ class LinkedBST(AbstractCollection):
             if i == finded[0]:
                 iterations += finded[1]
                 continue
+            else:
+                return
         end = time.time()
         results_1.append(end - start)
         results.append(iterations)
@@ -389,25 +393,22 @@ class LinkedBST(AbstractCollection):
             if i == finded[0]:
                 iterations += finded[1]
                 continue
+            else:
+                return
         end = time.time()
         results_1.append(end - start)
         results.append(iterations)
-        # Finding elements throught list
+        # Finding elements throught built in methods in list
         iterations = 0
         start = time.time()
         for elem in find_test_list:
-            for i in list_buf:
-                iterations += 1
-                if i == elem:
-                    break
+            list_buf.index(elem)
         end = time.time()
         results_1.append(end - start)
         results.append(iterations)
         # Printing results
         print(
-            "Повний перебір списку: "
-            + str(results[3])
-            + " ітерацій, "
+            "Вбудований метод списку: "
             + str(results_1[3])
             + " секунд\n"
             "Бінарне дерево на основі списку в алфавітному порядку: "
@@ -426,4 +427,3 @@ class LinkedBST(AbstractCollection):
             + str(results_1[2])
             + " секунд"
         )
-
